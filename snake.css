@@ -1,0 +1,212 @@
+/* body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+canvas {
+    border: 1px solid #333;
+} */
+#startbutton {
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* left: 45%;
+    top: 70%; */
+    margin-left: 50%;
+    margin-right: 50%;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 1000;
+    background-color: rgba(87, 167, 88, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(9, 228, 16, 0.5);
+    /* transform: translate(-50%, -50%); */
+}
+
+.startbtndiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 50%; */
+}
+#gameover{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 1000;
+  color: rgb(61, 255, 8);
+  text-shadow: 2px 3px 1px black;
+}
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    background-color: rgba(46, 233, 33, 0.8);
+    transform: scale(1.1);
+}
+
+
+body {
+    background-image: url(bckgd.jpg);
+    background-size: cover;
+    background-color: #f5f5f5;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0;
+  }
+#gameinfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 1000;
+    color: rgb(61, 255, 8);
+    text-shadow: 2px 3px 1px black;
+}
+
+#gameinfo div {
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+  #playerinfo{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 1000;
+    background-color: rgba(137, 245, 146, 0.4);
+    color: rgb(61, 255, 8);
+    text-shadow: 2px 3px 1px black;
+  }
+  
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #12e04cc8;
+  background-color: rgba(87, 167, 88, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(9, 228, 16, 0.5);
+}
+
+canvas * {
+    opacity: 0.4;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(9, 228, 16, 0.5);
+}
+
+#home a{
+  text-decoration: none;
+  color: rgb(61, 255, 8);
+  
+}
+#playagain,
+#home {
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 1000;
+  background-color: rgba(87, 167, 88, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(9, 228, 16, 0.5);
+  color: rgb(61, 255, 8);
+  text-shadow: 2px 3px 1px black;
+}
+  
+
+
+
+  @media only screen and (max-width: 1980px) {
+    .startbtndiv{
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  /* Small devices (portrait) - Less than 600px */
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 0.8em; /* Adjust font size */
+      padding: 10px; /* Add padding for smaller screens */
+    }
+    canvas {
+      width: 80%; /* Reduce canvas size for better viewing */
+    }
+    .startbtndiv{
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  @media only screen and (max-width: 1300px) {
+    body {
+      font-size: 1.5em; /* Increase font size slightly */
+    }
+    
+
+    .startbtndiv{
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+  }
+
+  @media only screen and (max-width: 1000px) {
+    body {
+      font-size: 1em; /* Increase font size slightly */
+    }
+    canvas {
+      width: 40%; /* Increase canvas size for bigger screens */
+    }
+    .startbtndiv{
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }

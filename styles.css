@@ -1,0 +1,176 @@
+body{
+    background-image: url(instruc.jpg);
+    background-size: cover;
+    background-color: #f5f5f5;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#instructions{
+
+    border: 5px solid #333;
+    border-radius: 20px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: rgb(22, 0, 165);
+    font-weight: 1000;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0 3px 3px rgb(165, 255, 162);
+    margin-top: 0px;
+    background-color: rgba(188, 210, 212, 0.4); /* Replace 0.5 with the desired opacity value (between 0 and 1) */
+}
+@keyframes slide-in {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#playerinfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 1000;
+    background-color: rgba(27, 22, 22, 0.4);
+    color: rgb(61, 255, 8);
+    text-shadow: 2px 3px 1px black;
+    animation: slide-in 1s ease;
+}
+
+#playerinfo div {
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+#playerinfo div:hover {
+    transform: scale(1.1);
+}
+
+#playerinfo div input {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 1000;
+    text-align: center;
+    color: rgb(0, 38, 188);
+    background-color: rgba(188, 210, 212, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+#playerinfo div input:hover {
+    background-color: rgba(188, 210, 212, 0.8);
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#proceed {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 1000;
+    background-color: rgba(27, 22, 22, 0.4);
+    color: rgb(61, 255, 8);
+    text-shadow: 2px 3px 1px black;
+    animation: fade-in 1s ease;
+}
+#proceed a{
+    text-decoration: none;
+    color: rgb(61, 255, 8);
+}
+
+#proceed button {
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(188, 210, 212, 0.5);
+    width: 200px;
+    height: 100px;
+    font-size: 30px;
+    font-weight: 1000;
+    color: rgb(0, 38, 188);
+    transition: background-color 0.3s ease;
+    animation: pulsate 2s infinite;
+}
+
+#proceed button:hover {
+    background-color: rgba(188, 210, 212, 0.8);
+}
+
+/* Small devices (portrait) - Less than 600px */
+@media only screen and (max-width: 600px) {
+    body {
+      background-size: contain; /* Adjust background size for smaller screens */
+    }
+    #instructions {
+      font-size: 20px; /* Reduce font size for better readability */
+    }
+    #playerinfo, #proceed {
+      font-size: 20px; /* Reduce font size for smaller screens */
+    }
+    #proceed button {
+        font-size: 20px;
+        height: 50px;
+      width: 150px; /* Reduce button width for better usability */
+    }
+  }
+  
+  /* Medium devices (landscape) - 600px to 900px */
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
+    #instructions {
+      font-size: 20px; /* Increase font size slightly */
+    }
+    #playerinfo, #proceed {
+      font-size: 25px; /* Increase font size slightly */
+    }
+    #proceed button {
+        font-size: 25px;
+        height: 60px;
+      width: 180px; /* Increase button width for better usability */
+    }
+  }
+  
+  /* Large devices - 900px and above */
+  @media only screen and (min-width: 900px) {
+    #instructions {
+      max-width: 70%; /* Limit width for large screens */
+    }
+    #playerinfo, #proceed {
+      font-size: 30px; /* Increase font size for larger screens */
+    }
+    #proceed button {
+      width: 200px; /* Maintain button width for larger screens */
+    }
+  }
