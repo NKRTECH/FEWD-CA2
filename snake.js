@@ -152,31 +152,65 @@ function moveSnake() {
     }
 }
 
+let touchStartX;
+let touchStartY;
+
 function handleInput(event) {
   const key = event.keyCode;
-  const touchX = event.touches ? event.touches[0].pageX : null;
-  const touchY = event.touches ? event.touches[0].pageY : null;
-  const { left, top, width, height } = event.target.getBoundingClientRect();
 
-  if ([37, 65].includes(key) && dx !== 1 || (touchX && touchX < left + width / 2 && dx !== 1)) { // Left arrow key, A key, or left half of the element on touch
+  if ([37, 65].includes(key) && dx !== 1) { // Left arrow key or A key
     dx = -1;
     dy = 0;
-  } else if ([38, 87].includes(key) && dy !== 1 || (touchY && touchY < top + height / 2 && dy !== 1)) { // Up arrow key, W key, or top half of the element on touch
+  } else if ([38, 87].includes(key) && dy !== 1) { // Up arrow key or W key
     dx = 0;
     dy = -1;
-  } else if ([39, 68].includes(key) && dx !== -1 || (touchX && touchX > left + width / 2 && dx !== -1)) { // Right arrow key, D key, or right half of the element on touch
+  } else if ([39, 68].includes(key) && dx !== -1) { // Right arrow key or D key
     dx = 1;
     dy = 0;
-  } else if ([40, 83].includes(key) && dy !== -1 || (touchY && touchY > top + height / 2 && dy !== -1)) { // Down arrow key, S key, or bottom half of the element on touch
+  } else if ([40, 83].includes(key) && dy !== -1) { // Down arrow key or S key
     dx = 0;
     dy = 1;
   }
 
+  // Check for touch events
+  if (event.type === 'touchstart') {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  } else if (event.type === 'touchend') {
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchEndY = event.changedTouches[0].clientY;
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    // Determine the swipe direction based on the change in touch position
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 0 && dx !== -1) { // Swipe right
+        dx = 1;
+        dy = 0;
+      } else if (deltaX < 0 && dx !== 1) { // Swipe left
+        dx = -1;
+        dy = 0;
+      }
+    } else {
+      if (deltaY > 0 && dy !== -1) { // Swipe down
+        dx = 0;
+        dy = 1;
+      } else if (deltaY < 0 && dy !== 1) { // Swipe up
+        dx = 0;
+        dy = -1;
+      }
+    }
+  }
+
   // Prevent the default behavior of arrow keys and W, A, S, D keys (scrolling the page)
-  if ([37, 38, 39, 40, 65, 87, 68, 83].includes(key) || event.type === 'touchstart' || event.type === 'touchmove') {
+  if ([37, 38, 39, 40, 65, 87, 68, 83].includes(key) || event.type === 'touchstart' || event.type === 'touchend') {
     event.preventDefault();
   }
 }
+
+document.addEventListener('keydown', handleInput);
+document.addEventListener('touchstart', handleInput);
+document.addEventListener('touchend', handleInput);
 
 function generateApple() {
     apple.x = Math.floor(Math.random() * tileCount);
