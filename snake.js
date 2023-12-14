@@ -74,9 +74,6 @@ function activateKeyboard() {
   document.addEventListener('keydown', handleInput);
     document.addEventListener('touchstart', handleInput);
     document.addEventListener('touchend', handleInput);
-    document.addEventListener('touchmove', (event) => {
-  event.preventDefault()
-    });
   keyboardActivated = true;
   console.log('keyboard activated');
 }
@@ -212,7 +209,9 @@ function handleInput(event) {
     event.preventDefault();
   }
 }
-
+document.addEventListener('touchmove', (event) => {
+  event.preventDefault();
+});
 
 function generateApple() {
     apple.x = Math.floor(Math.random() * tileCount);
