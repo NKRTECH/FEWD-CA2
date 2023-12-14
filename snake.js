@@ -76,6 +76,7 @@ function activateKeyboard() {
   document.addEventListener('keydown', handleInput);
     document.addEventListener('touchstart', handleInput);
     document.addEventListener('touchend', handleInput);
+    document.addEventListener('touchmove', handleInput);
   keyboardActivated = true;
   console.log('keyboard activated');
 }
