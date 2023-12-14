@@ -207,8 +207,6 @@ function handleInput(event) {
     event.preventDefault();
   }
 }
-
-document.addEventListener('keydown', handleInput);
 document.addEventListener('touchstart', handleInput);
 document.addEventListener('touchend', handleInput);
 
