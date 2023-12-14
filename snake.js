@@ -66,6 +66,8 @@ let keyboardActivated = false;
 
 function deactivateKeyboard() {
   document.removeEventListener('keydown', handleInput);
+      document.removeEventListener('touchstart', handleInput);
+  document.removeEventListener('touchend', handleInput);
   keyboardActivated = false;
   console.log('keyboard deactivated');
 }
