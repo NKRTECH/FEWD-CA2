@@ -158,6 +158,9 @@ let touchStartX;
 let touchStartY;
 
 function handleInput(event) {
+    document.addEventListener('touchmove', (event) => {
+  event.preventDefault();
+});
   const key = event.keyCode;
 
   if ([37, 65].includes(key) && dx !== 1) { // Left arrow key or A key
@@ -209,9 +212,6 @@ function handleInput(event) {
     event.preventDefault();
   }
 }
-document.addEventListener('touchmove', (event) => {
-  event.preventDefault();
-});
 
 function generateApple() {
     apple.x = Math.floor(Math.random() * tileCount);
