@@ -76,7 +76,6 @@ function activateKeyboard() {
   document.addEventListener('keydown', handleInput);
     document.addEventListener('touchstart', handleInput);
     document.addEventListener('touchend', handleInput);
-    document.addEventListener('touchmove', handleInput);
   keyboardActivated = true;
   console.log('keyboard activated');
 }
@@ -161,9 +160,6 @@ let touchStartX;
 let touchStartY;
 
 function handleInput(event) {
-    if (event.type === 'touchmove') {
-  event.preventDefault();
-}
   const key = event.keyCode;
 
   if ([37, 65].includes(key) && dx !== 1) { // Left arrow key or A key
