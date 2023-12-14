@@ -97,7 +97,7 @@ function startTimer() {
 
 function updateTimer() {
   time++; // Increment the time variable
-  timerElement.innerHTML = `Time: ${time}`; // Update the timer element with the new time
+  timerElement.innerHTML = `Time: ${time} sec`; // Update the timer element with the new time
 }
 function stopTimer() {
     clearInterval(timerInterval); // Clear the interval to stop the timer
@@ -119,7 +119,7 @@ let dx = 0;
 let dy = 0;
 
 const winningPhrases = ["You played Well", "Keep up the good work"];
-const losingPhrases = ["Go Study, You fool", "Better luck next time! Go Study now."];
+const losingPhrases = ["Go Study, You scored zero", "Better luck next time! Go Study now."];
 
 // Randomly select a phrase from the winningPhrases or losingPhrases arrays
 const getRandomPhrase = (phrases) => phrases[Math.floor(Math.random() * phrases.length)];
