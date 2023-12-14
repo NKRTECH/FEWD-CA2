@@ -158,9 +158,9 @@ let touchStartX;
 let touchStartY;
 
 function handleInput(event) {
-    document.addEventListener('touchmove', (event) => {
+    if (event.type === 'touchmove') {
   event.preventDefault();
-});
+}
   const key = event.keyCode;
 
   if ([37, 65].includes(key) && dx !== 1) { // Left arrow key or A key
